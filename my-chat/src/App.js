@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import RoomList from './components/RoomList';
+//import * as firebase from 'firebase';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import firebase from 'firebase/app';
+import 'firebase/database'
+
+// Initialize Firebase
+ var config = {
+   apiKey: "AIzaSyAX4T_4Fwtp9ewCl3HDYdfaWcO1XHfF8cQ",
+   authDomain: "chitchat-adb63.firebaseapp.com",
+   databaseURL: "https://chitchat-adb63.firebaseio.com",
+   projectId: "chitchat-adb63",
+   storageBucket: "chitchat-adb63.appspot.com",
+   messagingSenderId: "490733154510"
+ };
+ firebase.initializeApp(config)
+
+
+
+ class App extends Component {
+   constructor(props) {
+     super(props);
+    }
+
+    render() {
+      return (
+        <div className="sideBar">
+              <h1> Chit Chat </h1>
+              <RoomList firebase={firebase}/>
+        </div>
+      );
+    }
 }
 
 export default App;

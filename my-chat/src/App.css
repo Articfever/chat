@@ -26,3 +26,16 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.sideBar {
+    height: 100%; /* Full-height of page */
+    width: 25%; /* 100 width */
+    position: fixed; /* Stay still */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: grey; /* self explanitory*/
+    overflow-x: hidden; /* no looking out onto the horizon */
+    padding-top: 100px; /* Place content 100px from the top */
+}
