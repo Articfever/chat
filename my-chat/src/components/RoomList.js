@@ -6,7 +6,7 @@ class RoomList extends Component {
     super(props);
 
     this.state = {rooms: [],newRoomName: ''};
-    // create a firebase reference for rooms
+// create a firebase reference for rooms
     this.roomsRef = this.props.firebase.database().ref('rooms');
     this.handleChange = this.handleChange.bind(this);
     this.createRoom = this.createRoom.bind(this);
@@ -33,21 +33,21 @@ class RoomList extends Component {
       this.setState({ newRoomName:''});
     }
 
-  // Create Room List
+// Create Room List
   render() {
       return (
-        <section className="room-list">
+        <section className="chatRooms">
           <form className="addChatRoom">
             <input type="text" value={this.state.newRoomName} placeholder="New Room" onChange={this.handleChange}/>
             <input type="submit" onClick={this.createRoom}/>
           </form>
 
               <h1>howdy!</h1>
-                <div id="rooms">
-                 {this.state.rooms.map((room, index) => (
-                     <li key={room.key}>{room.key}</li>
+                <div className="chatRoomsList">
+                 { this.state.rooms.map( (room, index) =>
+                     <li key={room.key}>{room.name}</li>
 //                        <h2 key={index}>{room.name}</h2>
-                  ))}
+                  )}
                 </div>
         </section>
         );
