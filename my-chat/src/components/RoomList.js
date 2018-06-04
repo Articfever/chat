@@ -33,7 +33,11 @@ class RoomList extends Component {
       this.setState({ newRoomName:''});
     }
 
-// Create Room List
+    selectRoom(room) {
+      this.props.activeRoom(room);
+    }
+
+  // Create Room List
   render() {
       return (
         <section className="chatRooms">
@@ -43,14 +47,13 @@ class RoomList extends Component {
           </form>
 
               <h1>howdy!</h1>
-                <div className="chatRoomsList">
-                 { this.state.rooms.map( (room, index) =>
-                     <li key={room.key}>{room.name}</li>
-//                        <h2 key={index}>{room.name}</h2>
+                <div className="chatRoomList">
+                 {this.state.rooms.map((room, index) =>
+                     <li key={room.key} onClick={(e)=>this.selectRoom(room,e)}>{room.name}</li>
                   )}
                 </div>
         </section>
-        );
+      );
   }
 }
 
