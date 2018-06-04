@@ -37,5 +37,12 @@
     left: 0;
     background-color: grey; /* self explanitory*/
     overflow-x: hidden; /* no looking out onto the horizon */
-    padding-top: 100px; /* Place content 100px from the top */
+    padding-top: 50px; /* Place content 100px from the top */
+}
+
+.messageWindow{
+  float: right;
+  height: 100%; /* 100% Full-height */
+  width: 75%; /* 100 width - change this with JavaScript */
+
 }
