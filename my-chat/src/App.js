@@ -32,7 +32,8 @@ import User from './components/username';
 }
 
 activeRoom(room) {
-  this.setState({ activeRoom: room });
+//  this.setState({ activeRoom: room });
+this.setState({activeRoom: room}, () => console.log("Active room:", this.state.activeRoom));
 }
 
 setUser(user){
@@ -55,7 +56,7 @@ setUser(user){
        <h1>{this.state.activeRoom.name ||'Select room'}</h1>
         <h2>Current User: {this.state.user ? this.state.user.displayName : 'Guest'}</h2>
        <User firebase={firebase} setUser={this.setUser} user={this.state.user}/>
-       <MessageList firebase={firebase} activeRoom={this.state.activeRoom.key} user={this.state.user}/>
+       <MessageList firebase={firebase} activeRoom={this.state.activeRoom.key} user={this.state.user} activeUser={this.state.activeUser}/>
     </div>
   </div>
     );
